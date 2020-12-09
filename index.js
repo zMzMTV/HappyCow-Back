@@ -17,13 +17,13 @@ mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: true,
 });
 
-app.all("/", (req, res) => {
+app.get("/", (req, res) => {
   res.json({ message: "Welcome" });
 });
 
-app.all("*", (req, res) => {
+/*app.all("*", (req, res) => {
   res.status(404).json({ message: "error" });
-});
+});*/
 
 app.listen(3000, () => {
   console.log("Server Started");
