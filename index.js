@@ -11,7 +11,7 @@ app.use(cors());
 const userRoute = require("./routes/user");
 app.use(userRoute);
 
-mongoose.connect("mongodb://localhost/happy-cow", {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -25,6 +25,6 @@ app.all("*", (req, res) => {
   res.status(404).json({ message: "error" });
 });
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   console.log("Server Started");
 });
