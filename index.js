@@ -21,10 +21,10 @@ app.get("/", (req, res) => {
   res.json("Welcome");
 });
 
-/*app.all("*", (req, res) => {
+app.all("*", (req, res) => {
   res.status(404).json({ message: "error" });
-});*/
+});
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server Started");
 });
