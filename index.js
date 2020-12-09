@@ -8,14 +8,14 @@ const app = express();
 app.use(formidable());
 app.use(cors());
 
-const userRoute = require("./routes/user");
-app.use(userRoute);
-
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
+const userRoute = require("./routes/user");
+app.use(userRoute);
 
 app.get("/", (req, res) => {
   res.json({ message: "Welcome" });
