@@ -18,7 +18,7 @@ const userRoute = require("./routes/user");
 app.use(userRoute);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome" });
+  res.json("Welcome");
 });
 
 /*app.all("*", (req, res) => {
